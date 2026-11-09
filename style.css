@@ -213,3 +213,22 @@ h1 {
     .bar { padding: 0 20px; }
     .content { padding: 0 20px; }
 }
+footer {
+    margin-top: auto;
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+footer p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 4px 0;
+    letter-spacing: -0.01em;
+}
+
+footer .copyright {
+    font-weight: 600;
+    color: #6b7280;
+}
