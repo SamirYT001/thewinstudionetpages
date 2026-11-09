@@ -119,11 +119,12 @@ body {
 .bar-dropdown::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 8px;
+    left: 16px;
+    right: 16px;
     height: 3px;
     background: linear-gradient(90deg, #6366f1, #ec4899, #22c55e);
+    border-radius: 3px;
 }
 
 .bar-menu:hover .bar-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
