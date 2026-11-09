@@ -116,17 +116,6 @@ body {
     z-index: 9999;
 }
 
-.bar-dropdown::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    right: 16px;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #ec4899, #22c55e);
-    border-radius: 3px;
-}
-
 .bar-menu:hover .bar-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 
 .bar-dropdown a { 
