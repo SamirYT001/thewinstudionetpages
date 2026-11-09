@@ -9,6 +9,7 @@ body {
     display: flex; 
     flex-direction: column; 
     position: relative;
+    overflow-x: hidden;
 }
 
 .bg-decoration {
@@ -18,9 +19,12 @@ body {
     width: 100%; 
     height: 100%; 
     z-index: -1;
-    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-    background-size: 32px 32px;
-    opacity: 0.5;
+    background-image: 
+        radial-gradient(#e2e8f0 1px, transparent 1px),
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.06) 0%, transparent 60%);
+    background-size: 32px 32px, 100% 100%, 100% 100%, 100% 100%;
 }
 
 .bg-decoration::before {
@@ -28,8 +32,21 @@ body {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: 
-        radial-gradient(circle at 10% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(0, 0, 0, 0.03) 0%, transparent 40%);
+        linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.03) 50%, transparent 100%),
+        radial-gradient(ellipse at top left, rgba(236, 72, 153, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+}
+
+.bg-decoration::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
 }
 
 .bar { 
@@ -63,14 +80,14 @@ body {
 .bar-menu { margin-left: 30px; position: relative; }
 
 .bar-menu-trigger { 
-    padding: 10px 16px; 
+    padding: 10px 20px; 
     cursor: pointer; 
     color: #000000; 
     font-weight: 600; 
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     display: flex; 
     align-items: center; 
-    gap: 6px; 
+    gap: 8px; 
     border-radius: 8px;
     transition: background 0.2s;
     letter-spacing: -0.01em;
@@ -82,34 +99,48 @@ body {
     position: absolute; 
     top: calc(100% + 8px); 
     left: 0; 
-    background: #ffffff; 
-    border: 1px solid #f0f0f0; 
-    border-radius: 12px; 
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08); 
-    min-width: 200px; 
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    border: 1px solid #e5e7eb; 
+    border-radius: 16px; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12); 
+    min-width: 260px; 
     opacity: 0; 
     visibility: hidden; 
     transform: translateY(10px); 
     transition: all 0.2s ease; 
-    overflow: hidden; 
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #ec4899, #22c55e);
 }
 
 .bar-menu:hover .bar-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 
 .bar-dropdown a { 
     display: block; 
-    padding: 14px 20px; 
+    padding: 18px 24px; 
     color: #000000; 
     text-decoration: none; 
-    border-bottom: 1px solid #f9f9f9; 
-    transition: background 0.2s; 
-    font-size: 0.9rem;
+    transition: all 0.2s; 
+    font-size: 1rem;
     font-weight: 500;
     letter-spacing: -0.01em;
+    border-left: 3px solid transparent;
 }
 
-.bar-dropdown a:last-child { border-bottom: none; }
-.bar-dropdown a:hover { background: #f9f9f9; }
+.bar-dropdown a:hover { 
+    background: rgba(99, 102, 241, 0.05);
+    border-left-color: #6366f1;
+    padding-left: 28px;
+}
 
 .content { 
     margin-top: 100px; 
@@ -154,13 +185,7 @@ h1 {
     max-width: 100%; 
     border-radius: 16px; 
     box-shadow: 0 8px 30px rgba(0,0,0,0.06); 
-    border: 1px solid #f0f0f0; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-container img:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    border: 1px solid #f0f0f0;
 }
 
 .btn { 
