@@ -20,8 +20,8 @@ body {
     height: 100%; 
     z-index: -1;
     background-image: 
-        radial-gradient(#e2e8f0 1px, transparent 1px);
-    background-size: 32px 32px;
+        radial-gradient(#cbd5e1 2px, transparent 2px);
+    background-size: 48px 48px;
 }
 
 .bg-decoration::before {
@@ -77,6 +77,7 @@ body {
 .bar-menu { 
     margin-left: 30px; 
     position: relative; 
+    display: block;
 }
 
 .bar-menu-trigger { 
@@ -91,6 +92,7 @@ body {
     border-radius: 8px;
     transition: background 0.2s;
     letter-spacing: -0.01em;
+    user-select: none;
 }
 
 .bar-menu-trigger:hover { background: #f5f5f5; }
